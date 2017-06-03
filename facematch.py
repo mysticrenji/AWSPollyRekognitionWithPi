@@ -3,6 +3,7 @@
 import boto3 as b3
 import pygame, StringIO
 import sys, traceback
+import time
 from argparse import ArgumentParser
 from time import gmtime, strftime
 from boto3 import Session
@@ -11,6 +12,20 @@ from contextlib import closing
  
 def get_client():
     return b3.client('rekognition')
+
+def greeting_time():
+    currentTime = int(time.strftime('%H:%M').split(':')[0])
+    greetingItem=''
+
+    if currentTime < 12 :
+        greetingItem='Good morning'
+    elif currentTime > 12 :
+        greetingItem='Good afternoon'
+    else :
+        greetingItem='Good evening'
+
+    return greetingItem
+  
 
 def get_args():
     parser = ArgumentParser(description='Compare an image')
@@ -58,7 +73,8 @@ def main():
 			resu, res = check_matches(client, args.image, args.collection)
 
 			if (resu):
-				speak="Identity matched %s with %r similarity and %r confidence..." % (res['FaceMatches'][0]['Face']['ExternalImageId'], round(res['FaceMatches'][0]['Similarity'], 1), round(res['FaceMatches'][0]['Face']['Confidence'], 2))
+				greet=greeting_time()
+				speak = greet + "%s" % (res['FaceMatches'][0]['Face']['ExternalImageId'])
 			        synthesizer = VoiceSynthesizer(0.9)
        				synthesizer.say(speak)
 			else:
@@ -93,7 +109,7 @@ class VoiceSynthesizer(object):
        try:
           # Request speech synthesis
           response = self.__polly.synthesize_speech(Text=text, 
-                        OutputFormat="ogg_vorbis",VoiceId="Emma")
+                        OutputFormat="ogg_vorbis",VoiceId="Joanna")
        except (BotoCoreError, ClientError) as error:
           # The service returned an error
           print(error)
