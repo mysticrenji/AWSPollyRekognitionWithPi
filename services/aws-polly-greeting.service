@@ -1,0 +1,8 @@
+[Unit]
+Description=Job will execute motion integrated with AWS Polly and Rekognition
+
+[Service]
+ExecStart=/usr/local/bin/aws-polly-greeting.sh
+
+[Install]
+WantedBy=default.target
