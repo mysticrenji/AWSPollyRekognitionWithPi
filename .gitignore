@@ -26,6 +26,7 @@
 *.sql
 *.sqlite
 *.txt
+*.jpg
 
 # OS generated files #
 ######################
