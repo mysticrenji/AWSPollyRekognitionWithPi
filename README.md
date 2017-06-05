@@ -1,7 +1,6 @@
 # Motion detection using AWS Rekognition and Polly
 
 This project involves motion detection, along with Image Recognition. For motion detection, i have used Motion Library. 
-Motion lib can be installed by below command
 
 1. The prerequisite for running this is motion library. It can be installed using below command. </br>
    sudo apt-get install motion
