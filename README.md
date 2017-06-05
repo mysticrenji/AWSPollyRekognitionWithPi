@@ -12,7 +12,7 @@ Motion lib can be installed by below command
    cp /etc/motion/motion.conf ~/.motion/motion.conf
    
 ## Automated installation
-  I have compiled all the neccessary commands and combined into one small script. It would installed all the neccessary libs and enable the service by end of the installation. Run Install.bat from the cloned directory.
+  I have compiled all the neccessary commands and combined into one small script. It would installed all the neccessary libs and enable the service by end of the installation. Run Install.sh from the cloned directory.
    
    
 
