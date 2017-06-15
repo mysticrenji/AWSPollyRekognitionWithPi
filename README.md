@@ -2,15 +2,15 @@
 
 This project involves motion detection, along with Image Recognition. For motion detection, i have used Motion Library. 
 
-##Requirements
+## Requirements
 
-###Hardware
+### Hardware
 -> Raspberry Pi 3
 -> Pi Cam/ Webcam
 -> 16 GB SD Card(would be sufficient)
 -> Speaker
 
-###Software/Libs
+### Software/Libs
 -> AWS CLI (Rekognition, Polly,S3)
 -> Python(Boto3)
 -> Motion Lib
