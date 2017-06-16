@@ -24,7 +24,7 @@ First, you need to create a new collection on AWS Rekognition. Creating a 'home'
 
 Next, add your images to the pi-detector/faces folder. The more images of a person the better results you will get for detection. I would recommend several different poses in different lighting.
 
--> python add_image.py -i 'image.jpg' -c 'home' -l 'Tom'
+-> python add_image.py -i 'image.jpg' -c 'personname' -l 'Tom'
 
 I found the best results by taking a photo in the same area that the camera will be placed, and by using the picam. If you want to do this, I created a small python script to take a photo with a 10 second delay and then puts it into the pi-detector/faces folder. To use it:
 
@@ -46,7 +46,7 @@ Note that the above will also delete all the faces you have stored in AWS.
 
 The last script is facematch.py. If you have images updated and just want to test static photos against the faces you have stored on AWS, do the following:
 
--> python facematch.py -i 'renji.jpg' -c 'home'
+-> python facematch.py -i 'personname.jpg' -c 'home'
 
 The results will be printed to screen, to include the percentage of similarity and confidence.
 
