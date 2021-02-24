@@ -3,7 +3,7 @@
 from picamera import PiCamera
 import time
 
-count = 10
+count = 5
 camera = PiCamera()
 
 print '[+] A photo will be taken in 10 seconds...'
